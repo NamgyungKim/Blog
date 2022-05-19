@@ -1,0 +1,8 @@
+{
+  "cSpell.words": ["codepaths", "Parens", "tsbuildinfo"],
+  "editor.formatOnSave": true,
+  "eslint.codeActionsOnSave.rules": null,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  }
+}
