@@ -26,12 +26,6 @@ type IndexPageProps = {
   }
 }
 
-// const CATEGORY_LIST = {
-//   All: 5,
-//   Web: 3,
-//   Mobile: 2,
-// }
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -102,6 +96,9 @@ export const getPostList = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             summary
