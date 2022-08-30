@@ -1,36 +1,62 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 import styled from '@emotion/styled'
-import PostItem from 'components/Main/PostItem'
+import { Link } from 'gatsby'
 
-const POST_ITEM_DATA = {
-  title: 'Post Item Title',
-  date: '2020.01.29.',
-  categories: ['Web', 'Frontend', 'Testing'],
-  summary:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repellat doloremque fugit quis rem temporibus! Maxime molestias, suntrem debitis odit harum impedit. Modi cupiditate harum dignissimos eos in corrupti!',
-  thumbnail:
-    'https://ji5485.github.io/static/e4f34c558ae8e8235ff53b0311085796/4d854/javascript-core-concept-summary-function-1.webp',
-  link: 'https://www.google.co.kr/',
+type CategoryItemProps = {
+  active: boolean
 }
 
-const PostListWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+type GatsbyLinkProps = {
+  children: ReactNode
+  className?: string
+  to: string
+} & CategoryItemProps
+
+export type CategoryListProps = {
+  selectedCategory: string
+  categoryList: {
+    [key: string]: number
+  }
+}
+
+const CategoryListWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   width: 768px;
-  margin: 0 auto;
-  padding: 50px 0 100px;
+  margin: 100px auto 0;
 `
 
-const PostList: FunctionComponent = function () {
+const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
+  <Link {...props} />
+))<CategoryItemProps>`
+  margin-right: 20px;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: ${({ active }) => (active ? '800' : '400')};
+  cursor: pointer;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+`
+
+const CategoryList: FunctionComponent<CategoryListProps> = function ({
+  selectedCategory,
+  categoryList,
+}) {
   return (
-    <PostListWrapper>
-      {/* <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} /> */}
-    </PostListWrapper>
+    <CategoryListWrapper>
+      {Object.entries(categoryList).map(([name, count]) => (
+        <CategoryItem
+          to={`/?category=${name}`}
+          active={name === selectedCategory}
+          key={name}
+        >
+          #{name}({count})
+        </CategoryItem>
+      ))}
+    </CategoryListWrapper>
   )
 }
 
-export default PostList
+export default CategoryList
