@@ -3,7 +3,7 @@ module.exports = {
     title: `Nadia의 개발 블로그`,
     description: ``,
     author: `Nadia`,
-    siteUrl: '',
+    siteUrl: 'http://localhost:8000',
   },
   plugins: [
     {
@@ -72,9 +72,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: '', //배포사이트
+        siteUrl: 'http://localhost:8000', //배포사이트
         stripQueryString: true,
       },
     },
+    'gatsby-plugin-sitemap',
   ],
 }
