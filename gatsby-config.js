@@ -69,5 +69,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: '', //배포사이트
+        stripQueryString: true,
+      },
+    },
   ],
 }
