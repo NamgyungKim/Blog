@@ -7,5 +7,9 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof SearchBar>
 export const Default: ComponentStory<typeof SearchBar> = () => {
-  return <SearchBar />
+  const search = (keyWord: string) => {
+    console.log(keyWord)
+  }
+
+  return <SearchBar search={search} />
 }

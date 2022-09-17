@@ -1,13 +1,34 @@
 import styled from '@emotion/styled'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useRef } from 'react'
 import { color, text } from '../../styles/theme'
 import { BiSearch } from 'react-icons/bi'
 
-const SearchBar: FunctionComponent = () => {
+type SearchBarProps = {
+  search: (keyWord: string) => void
+}
+
+const SearchBar: FunctionComponent<SearchBarProps> = ({ search }) => {
+  const input = useRef<HTMLInputElement>(null)
+
+  const keyEnter = (e: React.KeyboardEvent<HTMLElement>) => {
+    if (e.code !== 'Enter') return
+    submitKeyWord()
+  }
+
+  const submitKeyWord = () => {
+    if (typeof input.current?.value !== 'string') return
+    search(input.current?.value)
+  }
+
   return (
     <SearchBox>
-      <Input type="text" placeholder="검색어를 입력해 주세요" />
-      <SearchButton>
+      <Input
+        ref={input}
+        onKeyUp={keyEnter}
+        type="text"
+        placeholder="검색어를 입력해 주세요"
+      />
+      <SearchButton onClick={() => submitKeyWord()}>
         <BiSearch size={24} color={color.$gray500} />
       </SearchButton>
     </SearchBox>
