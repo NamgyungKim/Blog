@@ -5,14 +5,16 @@ interface PostContentProps {
   html: string
 }
 
+const PostContent: FunctionComponent<PostContentProps> = function ({ html }) {
+  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />
+}
+
 const MarkdownRenderer = styled.div`
   // Renderer Style
   display: flex;
   flex-direction: column;
-  width: 768px;
-  margin: 0 auto;
-  padding: 100px 0;
   word-break: break-all;
+  margin-bottom: 100px;
 
   // Markdown Style
   line-height: 1.8;
@@ -100,9 +102,5 @@ const MarkdownRenderer = styled.div`
     tab-size: 2;
   }
 `
-
-const PostContent: FunctionComponent<PostContentProps> = function ({ html }) {
-  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />
-}
 
 export default PostContent

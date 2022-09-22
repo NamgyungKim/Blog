@@ -15,7 +15,7 @@ const BackButton = () => {
 const Button = styled.button`
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 28px 0;
   background-color: transparent;
   border: none;
   font-size: 16px;

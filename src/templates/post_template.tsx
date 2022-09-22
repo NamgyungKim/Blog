@@ -5,6 +5,7 @@ import Template from 'components/Common/Template'
 import PostHead from 'components/Post/PostHead'
 import PostContent from 'components/Post/PostContent'
 import CommentWidget from 'components/Post/CommentWidget'
+import PageLayout from 'components/Common/PageLayout'
 
 type PostTemplateProps = {
   data: {
@@ -31,24 +32,18 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
         summary,
         date,
         categories,
-        thumbnail: {
-          childImageSharp: { gatsbyImageData },
-          publicURL,
-        },
+        thumbnail: { publicURL },
       },
     },
   } = edges[0]
 
   return (
     <Template title={title} description={summary} url={href} image={publicURL}>
-      <PostHead
-        title={title}
-        date={date}
-        categories={categories}
-        thumbnail={gatsbyImageData}
-      />
-      <PostContent html={html} />
-      <CommentWidget />
+      <PageLayout>
+        <PostHead title={title} date={date} categories={categories} />
+        <PostContent html={html} />
+        <CommentWidget />
+      </PageLayout>
     </Template>
   )
 }
