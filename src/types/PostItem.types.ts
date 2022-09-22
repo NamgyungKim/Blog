@@ -7,7 +7,7 @@ export type PostFrontmatterType = {
   summary: string
   thumbnail: {
     childImageSharp: {
-      gatsbyImageData: IGatsbyImageData
+      gatsbyImageData?: IGatsbyImageData
     }
     publicURL: string
   }
