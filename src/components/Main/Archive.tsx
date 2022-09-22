@@ -57,17 +57,15 @@ const Box = styled(Link)`
       text-decoration: underline;
     }
   }
-  ${media.tablet} {
-    img {
-      display: none;
-    }
-  }
 `
 
 const Image = styled(GatsbyImage)`
   max-width: 200px;
   max-height: 150px;
   margin-left: 10px;
+  ${media.tablet} {
+    display: none !important;
+  }
 `
 
 export default Archive
