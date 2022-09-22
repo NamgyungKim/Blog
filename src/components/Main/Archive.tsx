@@ -24,9 +24,7 @@ const Archive: FunctionComponent<PostItemProps> = ({
         <h2>{title}</h2>
         <p>{summary}</p>
       </div>
-      {gatsbyImageData ? (
-        <GatsbyImage image={gatsbyImageData} alt="alt" />
-      ) : null}
+      {gatsbyImageData ? <Image image={gatsbyImageData} alt="alt" /> : null}
     </Box>
   )
 }
@@ -34,11 +32,14 @@ const Archive: FunctionComponent<PostItemProps> = ({
 const Box = styled(Link)`
   display: flex;
   text-decoration: none;
+  width: 100%;
   padding: 25px 0;
+  justify-content: space-between;
   border-bottom: 1px solid ${color.$gray300};
   cursor: pointer;
   span {
     color: ${color.$gray500};
+    ${text.$caption}
   }
   h2 {
     ${text.$body1}
@@ -56,16 +57,17 @@ const Box = styled(Link)`
       text-decoration: underline;
     }
   }
-  img {
-    max-width: 300px;
-    margin-left: 20px;
-    object-fit: cover;
-  }
   ${media.tablet} {
     img {
       display: none;
     }
   }
+`
+
+const Image = styled(GatsbyImage)`
+  max-width: 200px;
+  max-height: 150px;
+  margin-left: 10px;
 `
 
 export default Archive

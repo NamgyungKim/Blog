@@ -28,6 +28,8 @@ const Footer: FunctionComponent = function () {
 export default Footer
 
 const FooterWrapper = styled.div`
+  margin-top: 100px;
+  padding-bottom: 50px;
   ${text.$body1}
   color: ${color.$gray500};
   text-align: center;

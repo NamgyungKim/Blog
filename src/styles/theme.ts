@@ -34,12 +34,12 @@ export const text = {
   `,
   $body1: `
     font-size: 16px;
-    line-height: 150%;
+    line-height: 180%;
     letter-spacing: -0.02em;
   `,
   $body2: `
     font-size: 14px;
-    line-height: 150%;
+    line-height: 180%;
     letter-spacing: -0.02em;
   `,
   $caption: `
