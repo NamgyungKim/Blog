@@ -12,11 +12,10 @@ const Archive: FunctionComponent<PostItemProps> = ({
   date,
   categories,
   summary,
-  thumbnail: {
-    childImageSharp: { gatsbyImageData },
-  },
+  thumbnail,
   link,
 }) => {
+  const gatsbyImageData = thumbnail?.childImageSharp?.gatsbyImageData
   return (
     <Box to={link}>
       <div>

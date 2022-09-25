@@ -63,7 +63,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
             },
           }: PostListItemType,
         ) => {
-          categories.forEach(category => {
+          categories?.forEach(category => {
             if (list[category] === undefined) list[category] = 1
             else list[category]++
           })
@@ -121,11 +121,7 @@ export const getPostList = graphql`
             summary
             date(formatString: "YYYY.MM.DD.")
             categories
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(width: 768, height: 400)
-              }
-            }
+            thumbnail
           }
         }
       }
