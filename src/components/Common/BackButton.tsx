@@ -1,20 +1,21 @@
 import styled from '@emotion/styled'
+import { Link } from 'gatsby'
 import React from 'react'
 import { HiChevronDoubleLeft } from 'react-icons/hi'
 
 const BackButton = () => {
-  const goBackPage = () => window.history.back()
   return (
-    <Button onClick={goBackPage}>
+    <Button to="/">
       <HiChevronDoubleLeft size={18} />
       <span>Back</span>
     </Button>
   )
 }
 
-const Button = styled.button`
-  display: flex;
+const Button = styled(Link)`
+  display: inline-flex;
   align-items: center;
+  width: 100px;
   padding: 28px 0;
   background-color: transparent;
   border: none;
