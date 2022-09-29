@@ -5,47 +5,51 @@ export const color = {
   $gray300: '#DEDEDE',
   $gray100: '#F0EFF3',
   $blue: '#1933BA',
+  $text: '#37352F',
 }
 
 export const text = {
   $headline1: `
     font-weight: 700;
-  font-size: 34px;
-  line-height: 46px;
-  letter-spacing: -0.02em;
+    font-size: 34px;
+    line-height: 46px;
+    letter-spacing: 0.02em;
   `,
   $headline2: `
     font-weight: 700;
     font-size: 28px;
     line-height: 38px;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.02em;
   `,
   $headline3: `
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.02em;
   `,
   $headline4: `
     font-weight: 700;
     font-size: 20px;
     line-height: 23px;
     letter-spacing: -0.02em;
+    letter-spacing: 0.02em;
   `,
   $body1: `
     font-size: 16px;
+    font-weight: lighter;
     line-height: 180%;
-    letter-spacing: -0.02em;
-  `,
+    letter-spacing: 0.02em;
+    `,
   $body2: `
     font-size: 14px;
+    font-weight: lighter;
     line-height: 180%;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.02em;
   `,
   $caption: `
     font-size: 12px;
     line-height: 14px;
-    letter-spacing: -0.02em;
+    letter-spacing: 0em;
   `,
 }
 

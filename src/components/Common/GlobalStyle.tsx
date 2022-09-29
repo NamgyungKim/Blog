@@ -67,6 +67,7 @@ const defaultStyle = css`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    word-spacing: 0.1em;
   }
 
   html,

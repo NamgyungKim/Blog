@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
+import { text } from '../../styles/theme'
 
 interface PostContentProps {
   html: string
@@ -30,7 +31,7 @@ const MarkdownRenderer = styled.div`
   h1,
   h2,
   h3 {
-    font-weight: 800;
+    font-weight: bold;
     margin-bottom: 30px;
   }
 
@@ -38,6 +39,8 @@ const MarkdownRenderer = styled.div`
   * + h2,
   * + h3 {
     margin-top: 80px;
+    margin-left: 2px;
+    letter-spacing: 0.02em;
   }
 
   hr + h1,
@@ -51,26 +54,43 @@ const MarkdownRenderer = styled.div`
   }
 
   h2 {
+    margin-top: 1.4em;
+    margin-bottom: 1px;
+    padding: 3px 3px;
+    background-color: rgb(231, 243, 248);
     font-size: 25px;
+    line-height: 1.2;
   }
 
   h3 {
     font-size: 20px;
+    margin-top: 1em;
+    margin-bottom: 1px;
   }
 
   // Adjust Quotation Element Style
   blockquote {
-    margin: 30px 0;
-    padding: 5px 15px;
-    border-left: 2px solid #000000;
-    font-weight: 800;
+    padding: 0 15px;
+    border-left: 3px solid #000000;
   }
 
   // Adjust List Element Style
-  ol,
+  ol {
+    margin-left: 24px;
+    list-style: auto;
+  }
+
   ul {
-    margin-left: 20px;
-    padding: 30px 0;
+    margin-left: 24px;
+    list-style: disc;
+  }
+
+  li {
+    padding: 3px 0;
+    line-height: 150%;
+    p {
+      padding: 0 0 0 3px;
+    }
   }
 
   // Adjust Horizontal Rule style
@@ -81,25 +101,46 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Link Element Style
   a {
-    color: #4263eb;
+    opacity: 0.7;
+    color: #37352f;
+    font-weight: lighter;
     text-decoration: underline;
+    text-decoration-color: rgba(55, 53, 47, 0.4);
   }
 
   // Adjust Code Style
-  pre[class*='language-'] {
-    margin: 30px 0;
-    padding: 15px;
-    font-size: 15px;
+  pre[class*='language-'],
+  code[class*='language-'] {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+    text-shadow: none;
+    tab-size: 10;
+  }
 
-    ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 3px;
+  pre.language-html {
+    font-size: 13px;
+    padding: 30px;
+  }
+  code[class*='language-'].language-text {
+    font-weight: lighter;
+    padding: 2px 5px;
+    color: #eb5757;
+    ${text.$body2}
+    font-weight: normal;
+  }
+
+  aside {
+    display: flex;
+    border: 1px solid rgba(55, 53, 47, 0.16);
+    padding: 16px 18px;
+    border-radius: 5px;
+    margin: 4px 0;
+    div {
+      margin-right: 10px;
     }
   }
 
-  code[class*='language-'],
-  pre[class*='language-'] {
-    tab-size: 2;
+  strong {
+    font-weight: bold;
   }
 `
 
