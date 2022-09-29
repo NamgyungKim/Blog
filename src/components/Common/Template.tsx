@@ -27,6 +27,8 @@ const Template: FunctionComponent<TemplateProps> = function ({
   return (
     <Container>
       <Helmet>
+        <html lang="ko" />
+
         <title>{title}</title>
 
         <meta name="description" content={description} />
@@ -46,6 +48,20 @@ const Template: FunctionComponent<TemplateProps> = function ({
         <meta name="twitter:image" content={image} />
         <meta name="twitter:site" content="@사용자이름" />
         <meta name="twitter:creator" content="@사용자이름" />
+
+        <meta
+          name="google-site-verification"
+          content="웹 마스터 도구가 제공하는 Meta 태그"
+        />
+        <meta
+          name="naver-site-verification"
+          content="웹 마스터 도구가 제공하는 Meta 태그"
+        />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Roboto:ital,wght@0,300;0,400;0,900;1,300;1,400&display=swap"
+          rel="stylesheet"
+        ></link>
       </Helmet>
 
       <GlobalStyle />

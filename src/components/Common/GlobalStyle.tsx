@@ -5,7 +5,7 @@ import { color } from '../../styles/theme'
 
 const defaultStyle = css`
   // NotoSansKR
-  @font-face {
+  /* @font-face {
     font-family: 'NotoSansKR';
     font-style: normal;
     font-weight: normal;
@@ -25,9 +25,9 @@ const defaultStyle = css`
     font-weight: lighter;
     font-display: swap;
     src: url('../font/NotoSansKR-Light.otf');
-  }
+  } */
   // Roboto
-  @font-face {
+  /* @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
@@ -61,7 +61,7 @@ const defaultStyle = css`
     font-weight: lighter;
     font-display: swap;
     src: url('../font/Roboto-LightItalic.ttf');
-  }
+  } */
 
   * {
     padding: 0;
@@ -75,7 +75,7 @@ const defaultStyle = css`
   #___gatsby {
     height: 100%;
     color: ${color.$text};
-    font-family: 'NotoSansKR', 'Roboto', serif;
+    font-family: 'Noto Sans KR', 'Roboto', serif;
   }
 
   a,
