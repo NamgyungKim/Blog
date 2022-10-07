@@ -32,7 +32,7 @@ const PostHeadInfoWrapper = styled.div`
   padding: 28px 0;
 `
 
-const Title = styled.h2`
+const Title = styled.h1`
   ${text.$headline1}
 `
 

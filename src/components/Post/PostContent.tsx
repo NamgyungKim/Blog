@@ -116,6 +116,10 @@ const MarkdownRenderer = styled.div`
     tab-size: 10;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   pre.language-html {
     font-size: 13px;
     padding: 30px;
