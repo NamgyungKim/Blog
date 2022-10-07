@@ -3,6 +3,9 @@ import { Global, css } from '@emotion/react'
 import '../../styles/reset.css'
 import { color } from '../../styles/theme'
 
+const GlobalStyle: FunctionComponent = function () {
+  return <Global styles={defaultStyle} />
+}
 const defaultStyle = css`
   * {
     padding: 0;
@@ -26,9 +29,5 @@ const defaultStyle = css`
     cursor: pointer;
   }
 `
-
-const GlobalStyle: FunctionComponent = function () {
-  return <Global styles={defaultStyle} />
-}
 
 export default GlobalStyle

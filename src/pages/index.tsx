@@ -2,7 +2,6 @@ import React, { FunctionComponent, useMemo } from 'react'
 import Introduction from 'components/Main/Introduction'
 import PostList from 'components/Main/PostList'
 import { graphql } from 'gatsby'
-import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { PostListItemType } from 'types/PostItem.types'
 import queryString, { ParsedQuery } from 'query-string'
 import Template from 'components/Common/Template'
@@ -24,12 +23,6 @@ type IndexPageProps = {
     allMarkdownRemark: {
       edges: PostListItemType[]
     }
-    file: {
-      childImageSharp: {
-        gatsbyImageData: IGatsbyImageData
-      }
-      publicURL: string
-    }
   }
 }
 
@@ -40,10 +33,6 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       siteMetadata: { title, description, siteUrl },
     },
     allMarkdownRemark: { edges },
-    file: {
-      childImageSharp: { gatsbyImageData },
-      publicURL,
-    },
   },
 }) {
   const parsed: ParsedQuery<string> = queryString.parse(search)
@@ -78,14 +67,9 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   )
 
   return (
-    <Template
-      title={title}
-      description={description}
-      url={siteUrl}
-      image={publicURL}
-    >
+    <Template title={title} description={description} url={siteUrl}>
       <PageLayout>
-        <Introduction profileImage={gatsbyImageData} />
+        <Introduction />
         <TabMenu
           selectedCategory={selectedCategory}
           categoryList={categoryList}
@@ -95,8 +79,6 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
     </Template>
   )
 }
-
-export default IndexPage
 
 export const getPostList = graphql`
   query getPostList {
@@ -126,11 +108,7 @@ export const getPostList = graphql`
         }
       }
     }
-    file(name: { eq: "profile-image" }) {
-      childImageSharp {
-        gatsbyImageData(width: 120, height: 120)
-      }
-      publicURL
-    }
   }
 `
+
+export default IndexPage

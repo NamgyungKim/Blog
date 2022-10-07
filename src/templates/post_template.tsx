@@ -47,8 +47,6 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
   )
 }
 
-export default PostTemplate
-
 export const queryMarkdownDataBySlug = graphql`
   query queryMarkdownDataBySlug($slug: String) {
     allMarkdownRemark(filter: { fields: { slug: { eq: $slug } } }) {
@@ -67,3 +65,5 @@ export const queryMarkdownDataBySlug = graphql`
     }
   }
 `
+
+export default PostTemplate

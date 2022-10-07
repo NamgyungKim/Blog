@@ -24,9 +24,6 @@ const Footer: FunctionComponent = function () {
     </FooterWrapper>
   )
 }
-
-export default Footer
-
 const FooterWrapper = styled.div`
   margin-top: 100px;
   padding-bottom: 50px;
@@ -41,3 +38,5 @@ const LinkIcon = styled.div`
     margin: 0 4px;
   }
 `
+
+export default Footer

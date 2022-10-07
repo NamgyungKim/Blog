@@ -72,4 +72,5 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
     margin-right: 3px;
   }
 `
+
 export default TabMenu
