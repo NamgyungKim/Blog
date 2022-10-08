@@ -45,11 +45,11 @@ const Template: FunctionComponent<TemplateProps> = function ({
 
         <meta
           name="google-site-verification"
-          content="웹 마스터 도구가 제공하는 Meta 태그"
+          content="YjPsphPLmcODNInXoBpf71o5ngdHNIhM1G3VDy5aUF0"
         />
         <meta
           name="naver-site-verification"
-          content="웹 마스터 도구가 제공하는 Meta 태그"
+          content="2f3671b25c67822f53f28622d22c2f8f279d41b1"
         />
 
         <link
