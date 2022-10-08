@@ -56,6 +56,7 @@ const Template: FunctionComponent<TemplateProps> = function ({
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Roboto:ital,wght@0,300;0,400;0,900;1,300;1,400&display=swap"
           rel="stylesheet"
         ></link>
+        <link rel="favicon" href="./favicon.ico" />
       </Helmet>
 
       <GlobalStyle />
