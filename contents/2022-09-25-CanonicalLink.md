@@ -1,5 +1,5 @@
 ---
-date: '2020-09-26'
+date: '2022-09-26'
 title: 'Canonical Link Element란?'
 categories: ['SEO']
 summary: 'Canonical Link Element란 검색 엔진에게 중복된 페이지 중에서 가장 대표적으로 사용되는 URL을 알려주는 역할을 하는 Link 요소이다. 검색 엔진에 왜 중복된 페이지 중에서 대표URL을 알려주어야 할까? 왜 중복되는 URL이 발생하는걸까?'
