@@ -57,15 +57,6 @@ const Template: FunctionComponent<TemplateProps> = function ({
           rel="stylesheet"
         ></link>
         <link rel="favicon" href="./favicon.ico" />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-D3SC4S86CR"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-D3SC4S86CR');
-        </script>
       </Helmet>
 
       <GlobalStyle />
