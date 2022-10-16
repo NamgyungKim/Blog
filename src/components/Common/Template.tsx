@@ -51,7 +51,8 @@ const Template: FunctionComponent<TemplateProps> = function ({
           name="naver-site-verification"
           content="2f3671b25c67822f53f28622d22c2f8f279d41b1"
         />
-
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Roboto:ital,wght@0,300;0,400;0,900;1,300;1,400&display=swap"
           rel="stylesheet"
