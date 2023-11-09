@@ -7,6 +7,9 @@ import queryString, { ParsedQuery } from 'query-string'
 import Template from 'components/Common/Template'
 import TabMenu, { CategoryListProps } from 'components/Main/TabMenu'
 import PageLayout from 'components/Common/PageLayout'
+import SearchBar from 'components/Main/SearchBar'
+import useSearchData from 'hooks/useSearchData'
+import Pagenation from 'components/Common/Pagenation'
 
 type IndexPageProps = {
   location: {
@@ -26,6 +29,8 @@ type IndexPageProps = {
   }
 }
 
+const SIZE = 10
+
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
   location: { search },
   data: {
@@ -35,11 +40,18 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
     allMarkdownRemark: { edges },
   },
 }) {
+  const [searchWorld, setSearchWorld] = React.useState('')
   const parsed: ParsedQuery<string> = queryString.parse(search)
   const selectedCategory: string =
     typeof parsed.category !== 'string' || !parsed.category
       ? 'All'
       : parsed.category
+  const { page, setPage, postList } = useSearchData(
+    selectedCategory,
+    searchWorld,
+    edges,
+    SIZE,
+  )
 
   const categoryList = useMemo(
     () =>
@@ -66,15 +78,25 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
     [],
   )
 
+  const onSearch = (world: string) => {
+    setSearchWorld(world)
+  }
+
   return (
     <Template title={title} description={description} url={siteUrl}>
       <PageLayout>
         <Introduction />
+        <SearchBar search={onSearch} />
         <TabMenu
           selectedCategory={selectedCategory}
           categoryList={categoryList}
         />
-        <PostList selectedCategory={selectedCategory} posts={edges} />
+        <PostList posts={postList} />
+        <Pagenation
+          page={page}
+          totalPage={edges.length / SIZE + 1}
+          onChange={setPage}
+        />
       </PageLayout>
     </Template>
   )
