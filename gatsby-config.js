@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Nadia의 개발 블로그`,
-    description: ``,
+    description: `Nadia의 개발 블로그`,
     author: `Nadia`,
-    siteUrl: 'http://localhost:8000',
+    siteUrl: 'https://nadia.co.kr',
   },
   plugins: [
     {
@@ -80,6 +80,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
+        host: 'https://nadia.co.kr',
+        sitemap: 'https://nadia.co.kr/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
