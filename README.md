@@ -1,5 +1,5 @@
-배포 URL : 
-    - https://nadia.co.kr
-    - https://blog-nadiablog.vercel.app/
+배포 URL :   
+    - https://nadia.co.kr  
+    - https://blog-nadiablog.vercel.app/  
 
 node--v : ^18
