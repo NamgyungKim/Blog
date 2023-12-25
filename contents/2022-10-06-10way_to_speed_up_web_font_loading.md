@@ -1,13 +1,13 @@
 ---
 date: '2022-10-06'
 title: '10 ways to speed up web font loading'
-categories: ['SEO']
+categories: ['SEO','WEB']
 summary: 'webFont의 사용은 성능상  문제를 일으킵니다.  수백 킬로바이트에 달하며, 도메인에서 호스팅해야하는 폰트는 웹사이트를 느리게 만듭니다. 그래도 우리는 이러한 문제를 해결할 방법이 있습니다. 다음은 웹사이트에서 글꼴 로드 성능을 향상시키는 10가지 팁을 소개합니다.'
 thumbnail: ''
 ---
 
 <aside>
-  <div>
+  <div class="icon">
   📜 
   </div>
   영어로 작성된 아티클

@@ -138,7 +138,7 @@ const MarkdownRenderer = styled.div`
     padding: 16px 18px;
     border-radius: 5px;
     margin: 4px 0;
-    div {
+    .icon {
       margin-right: 10px;
     }
   }
