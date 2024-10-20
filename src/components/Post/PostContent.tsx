@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import { text } from '../../styles/theme'
 
@@ -7,7 +7,22 @@ interface PostContentProps {
 }
 
 const PostContent: FunctionComponent<PostContentProps> = function ({ html }) {
-  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />
+  const [content, setContent] = useState('')
+
+  // heading id setting
+  useEffect(() => {
+    const $div = document.createElement('div')
+    $div.innerHTML = html
+    const headingTag = $div.querySelectorAll('h1,h2,h3,h4,h5,h6')
+    const itemsArray = Array.from(headingTag)
+    itemsArray.forEach(heading => {
+      const idValue = heading.innerHTML
+      heading.id = idValue
+    })
+    setContent($div.innerHTML)
+  }, [])
+
+  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: content }} />
 }
 
 const MarkdownRenderer = styled.div`

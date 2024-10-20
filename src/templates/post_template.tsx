@@ -6,6 +6,7 @@ import PostHead from 'components/Post/PostHead'
 import PostContent from 'components/Post/PostContent'
 import CommentWidget from 'components/Post/CommentWidget'
 import PageLayout from 'components/Common/PageLayout'
+import SidebarNav from 'components/Main/SidebarNav'
 
 type PostTemplateProps = {
   data: {
@@ -40,6 +41,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
     >
       <PageLayout>
         <PostHead title={title} date={date} categories={categories} />
+        <SidebarNav html={html} />
         <PostContent html={html} />
         <CommentWidget />
       </PageLayout>
